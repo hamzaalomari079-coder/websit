@@ -9,7 +9,9 @@
 <body>
  <header>
   <nav class="navbar">
-   <a href="index.html" class="logo"><span>Sunrise Pet Resort</span></a>
+   <a href="index.html" class="logo">
+    <img src="../emoji/logo.svg" alt="Sunrise Pet Resort Logo" class="site-logo">
+    <span>Sunrise Pet Resort</span></a>
    <ul class="nav-links">
     <li><a href="index.html">الرئيسية</a></li>
     <li><a href="about.html">من نحن</a></li>
@@ -26,6 +28,14 @@
   </nav>
  </header>
 
+ <section class="section page-cover-section">
+  <div class="container">
+   <div class="page-cover">
+    <img src="../images/contact-main.jpg" alt="صورة صفحة contact" loading="lazy">
+   </div>
+  </div>
+ </section>
+
  <section class="hero" style="background: linear-gradient(135deg, #0EA5A4 0%, #14B8A6 100%); display: flex; align-items: center;">
   <div class="hero-content" style="color: white;">
    <h1>تواصل معنا</h1>
@@ -36,7 +46,7 @@
  <section class="section">
   <div class="container">
    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3rem;">
-    <!-- Contact Form -->
+    
     <div>
      <h2>نموذج الحجز</h2>
      <form id="contactForm" action="https://formspree.io/f/xlgwyaba" method="POST">
@@ -95,7 +105,7 @@
      </form>
     </div>
 
-    <!-- Contact Information -->
+    
     <div>
      <h2>معلومات التواصل</h2>
      
@@ -118,14 +128,14 @@
 
      <div style="background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%); padding: 2rem; border-radius: 1rem;">
       <h3 style="margin-bottom: 1rem;">ساعات العمل</h3>
-      <p>السبت - الخميس: 8:00 صباحاً - 8:00 مساءً</p>
-      <p>الجمعة: 10:00 صباحاً - 6:00 مساءً</p>
+      <p>السبت - الخميس: 8:00 صباحا - 8:00 مساء</p>
+      <p>الجمعة: 10:00 صباحا - 6:00 مساء</p>
       <p style="margin-top: 0.5rem; color: #999;">الخدمة متاحة 24/7 للطوارئ</p>
      </div>
     </div>
    </div>
 
-   <!-- Social Media -->
+   
    <div style="text-align: center; padding: 2rem; background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%); border-radius: 1rem;">
     <h2 style="margin-bottom: 1.5rem;">تابعنا على وسائل التواصل</h2>
     <div style="display: flex; gap: 1rem; justify-content: center;">
@@ -177,7 +187,6 @@
    </div>
   </div>
  </footer>
-
 
  <script src="../js/main.js"></script>
 </body>
