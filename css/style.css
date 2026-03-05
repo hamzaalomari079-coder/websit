@@ -651,6 +651,46 @@ footer {
 .text-muted { color: #999; }
 .text-dark { color: var(--dark-gray); }
 
+
+.video-showcase-section {
+  background: radial-gradient(circle at 20% 20%, rgba(42, 156, 163, 0.12), transparent 45%), var(--white);
+}
+
+.video-showcase-card {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(145deg, #ffffff 0%, #eef7f6 100%);
+  box-shadow: 0 20px 45px rgba(18, 56, 63, 0.15);
+  overflow: hidden;
+}
+
+.video-glow {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(42, 156, 163, 0.35) 0%, rgba(42, 156, 163, 0) 70%);
+  top: -80px;
+  left: -80px;
+  pointer-events: none;
+}
+
+.brand-video {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  display: block;
+  border: 2px solid rgba(15, 106, 114, 0.2);
+  background: #000;
+}
+
+.video-caption {
+  margin: 1rem 0 0;
+  text-align: center;
+  color: #48656b;
+}
+
 @media (max-width: 768px) {
   h1 { font-size: 2.5rem; }
   h2 { font-size: 1.75rem; }
@@ -694,8 +734,16 @@ footer {
     font-size: 1rem;
   }
   
-  .hero-buttons {
+   .hero-buttons {
     flex-direction: column;
+  }
+
+  .video-showcase-card {
+    padding: 0.75rem;
+  }
+
+  .video-caption {
+    font-size: 0.9rem;
   }
   
   .hero-buttons .btn {
