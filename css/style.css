@@ -106,7 +106,7 @@ a:hover {
 
 .btn {
   display: inline-block;
-  padding: 0.875rem 2rem;
+  padding: 1rem 2.25rem;
   border: none;
   border-radius: var(--radius-md);
   font-family: var(--font-lato);
@@ -159,8 +159,8 @@ a:hover {
 }
 
 .btn-lg {
-  padding: 1rem 2.5rem;
-  font-size: 1.125rem;
+  padding: 1.15rem 2.8rem;
+  font-size: 1.2rem;
 }
 
 header {
@@ -245,9 +245,10 @@ header.scrolled {
 .cta-btn {
   background: var(--gradient-warm);
   color: var(--white);
-  padding: 0.75rem 1.5rem;
+  padding: 0.95rem 1.75rem;
   border-radius: var(--radius-md);
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1.05rem;
   transition: all var(--transition-normal);
 }
 
@@ -321,6 +322,34 @@ header.scrolled {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+}
+
+.quick-nav-section {
+  background: linear-gradient(135deg, #eaf5f2 0%, #f7fbfa 100%);
+  border-bottom: 1px solid rgba(15, 106, 114, 0.12);
+}
+
+.quick-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.quick-nav a {
+  background: var(--white);
+  color: var(--dark-gray);
+  border: 1px solid rgba(15, 106, 114, 0.2);
+  border-radius: 999px;
+  padding: 0.55rem 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.quick-nav a:hover {
+  background: var(--gradient-warm);
+  color: var(--white);
 }
 
 @keyframes slideInLeft {
@@ -685,6 +714,46 @@ footer {
   background: #000;
 }
 
+.compare-section {
+  background: var(--white);
+}
+
+.compare-table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 12px 30px rgba(18, 56, 63, 0.12);
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+  text-align: center;
+  background: var(--white);
+}
+
+.compare-table th {
+  background: var(--gradient-warm);
+  color: var(--white);
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.compare-table td {
+  padding: 0.95rem;
+  border-bottom: 1px solid #e4ecea;
+}
+
+.compare-table tbody tr:nth-child(even) {
+  background: #f7fbfa;
+}
+
+.compare-table td:first-child,
+.compare-table th:first-child {
+  text-align: right;
+  font-weight: 600;
+}
+
 
 @media (max-width: 768px) {
   h1 { font-size: 2.5rem; }
@@ -735,6 +804,14 @@ footer {
 
   .video-showcase-card {
     padding: 0.75rem;
+  }
+
+  .quick-nav {
+    justify-content: flex-start;
+  }
+
+  .quick-nav a {
+    font-size: 0.9rem;
   }
   
   .hero-buttons .btn {
