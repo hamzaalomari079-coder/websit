@@ -305,3 +305,61 @@ forms.forEach((form) => {
     });
   });
 });
+
+function addEmojiToImportantText() {
+  const importantElements = document.querySelectorAll('h1, h2, .cta-btn, .btn-primary, .section-title p');
+  const rules = [
+    { keywords: ['احجز', 'book', 'reserve'], emoji: '📌' },
+    { keywords: ['خدمات', 'services'], emoji: '🐾' },
+    { keywords: ['باقات', 'packages'], emoji: '📦' },
+    { keywords: ['تواصل', 'contact'], emoji: '📞' },
+    { keywords: ['لماذا', 'why choose'], emoji: '⭐' },
+    { keywords: ['من نحن', 'about'], emoji: '🏠' },
+    { keywords: ['خصوصية', 'privacy'], emoji: '🛡️' },
+    { keywords: ['نصائح', 'tips'], emoji: '💡' },
+    { keywords: ['شهادات', 'testimonials'], emoji: '✅' }
+  ];
+
+  importantElements.forEach((element) => {
+    const originalText = element.textContent.trim();
+    if (!originalText || element.dataset.emojiDecorated === 'true') return;
+    if (/^(?:[\u{1F300}-\u{1FAFF}]|[⭐✅📌📞🐾💡🏠🎉📦🛡️])\s/u.test(originalText)) return;
+
+    const normalizedText = originalText.toLowerCase();
+    const matchedRule = rules.find((rule) => rule.keywords.some((keyword) => normalizedText.includes(keyword)));
+    if (!matchedRule) return;
+
+    element.textContent = `${matchedRule.emoji} ${originalText}`;
+    element.dataset.emojiDecorated = 'true';
+  });
+}
+
+function initBackToTopButton() {
+  if (document.querySelector('.back-to-top')) return;
+
+  const pageLanguage = document.documentElement.lang || 'ar';
+  const backToTopButton = document.createElement('button');
+  backToTopButton.className = 'back-to-top';
+  backToTopButton.type = 'button';
+  backToTopButton.innerHTML = '⬆️';
+  backToTopButton.setAttribute(
+    'aria-label',
+    pageLanguage.startsWith('en') ? 'Back to top' : 'العودة إلى الأعلى'
+  );
+
+  backToTopButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  document.body.appendChild(backToTopButton);
+
+  const toggleVisibility = () => {
+    backToTopButton.classList.toggle('visible', window.scrollY > 320);
+  };
+
+  window.addEventListener('scroll', toggleVisibility);
+  toggleVisibility();
+}
+
+addEmojiToImportantText();
+initBackToTopButton();
