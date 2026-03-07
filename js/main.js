@@ -5,6 +5,7 @@ const navItems = document.querySelectorAll('.nav-links a');
 const languageToggle = document.querySelector('.lang-toggle');
 const navbar = document.querySelector('.navbar');
 
+// تطبيق الوضع اللوني (فاتح/داكن) وتحديث حالة زر الثيم
 function applyTheme(theme, toggleButton) {
   const isDarkMode = theme === 'dark';
   document.body.classList.toggle('dark-mode', isDarkMode);
@@ -15,6 +16,7 @@ function applyTheme(theme, toggleButton) {
   }
 }
 
+// تهيئة زر الثيم مرة واحدة داخل شريط التنقل
 function initThemeToggle() {
   if (!navbar) return;
 
@@ -47,6 +49,7 @@ function initThemeToggle() {
 
 initThemeToggle();
 
+// حساب مسار الصفحة المكافئ عند التحويل بين العربية والإنجليزية
 function getLanguagePath(targetLanguage) {
   const path = window.location.pathname;
   const search = window.location.search || '';
@@ -306,6 +309,7 @@ forms.forEach((form) => {
   });
 });
 
+// اضافة اموجي للنصوص المهمة بشكل تلقائي بدون تكرار
 function addEmojiToImportantText() {
   const importantElements = document.querySelectorAll('h1, h2, .cta-btn, .btn-primary, .section-title p');
   const rules = [
@@ -334,6 +338,7 @@ function addEmojiToImportantText() {
   });
 }
 
+// إنشاء زر العودة للأعلى وتفعيل الظهور عند النزول في الصفحة
 function initBackToTopButton() {
   if (document.querySelector('.back-to-top')) return;
 
