@@ -877,7 +877,7 @@ footer {
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
   .navbar {
     padding: 0.9rem 1rem;
     position: relative;
@@ -897,7 +897,8 @@ footer {
     position: absolute;
     top: calc(100% + 0.35rem);
     left: 1rem;
-    right: 1rem;
+    right: auto;
+    width: min(340px, calc(100% - 2rem));
     background: var(--white);
     border-radius: var(--radius-md);
     flex-direction: column;

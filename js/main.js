@@ -27,7 +27,7 @@ if (hamburger && navLinks) {
   });
 
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 992) {
+    if (window.innerWidth > 1200) {
       navLinks.classList.remove('active');
       hamburger.classList.remove('active');
     }
