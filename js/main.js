@@ -97,3 +97,67 @@ accordionButtons.forEach((button) => {
     if (!isActive) accordion.classList.add('active');
   });
 });
+
+// تخصيص رسائل التحقق في النماذج باللغة العربية
+const forms = document.querySelectorAll('form');
+
+function getArabicValidationMessage(field) {
+  const fieldLabel = field.closest('.form-group')?.querySelector('label')?.textContent?.trim() || 'هذا الحقل';
+
+  if (field.validity.valueMissing) {
+    return `الرجاء تعبئة حقل ${fieldLabel}.`;
+  }
+
+  if (field.validity.typeMismatch) {
+    if (field.type === 'email') {
+      return 'الرجاء إدخال بريد إلكتروني صحيح.';
+    }
+    if (field.type === 'url') {
+      return 'الرجاء إدخال رابط صحيح.';
+    }
+  }
+
+  if (field.validity.patternMismatch) {
+    return `الرجاء إدخال قيمة صحيحة في حقل ${fieldLabel}.`;
+  }
+
+  if (field.validity.tooShort) {
+    return `الحد الأدنى لحقل ${fieldLabel} هو ${field.minLength} أحرف.`;
+  }
+
+  if (field.validity.tooLong) {
+    return `الحد الأقصى لحقل ${fieldLabel} هو ${field.maxLength} حرفًا.`;
+  }
+
+  if (field.validity.rangeUnderflow) {
+    return `القيمة في حقل ${fieldLabel} يجب ألا تقل عن ${field.min}.`;
+  }
+
+  if (field.validity.rangeOverflow) {
+    return `القيمة في حقل ${fieldLabel} يجب ألا تزيد عن ${field.max}.`;
+  }
+
+  if (field.validity.badInput) {
+    return `الرجاء إدخال قيمة صالحة في حقل ${fieldLabel}.`;
+  }
+
+  return '';
+}
+
+forms.forEach((form) => {
+  const fields = form.querySelectorAll('input, select, textarea');
+
+  fields.forEach((field) => {
+    field.addEventListener('invalid', () => {
+      field.setCustomValidity(getArabicValidationMessage(field));
+    });
+
+    field.addEventListener('input', () => {
+      field.setCustomValidity('');
+    });
+
+    field.addEventListener('change', () => {
+      field.setCustomValidity('');
+    });
+  });
+});
