@@ -1318,6 +1318,14 @@ body.dark-mode footer {
   border-color: rgba(108, 197, 194, 0.24);
 }
 
+body.dark-mode .video-showcase-section {
+  background: radial-gradient(circle at 20% 20%, rgba(124, 227, 224, 0.12), transparent 45%), #10242B !important;
+}
+
+body.dark-mode .video-showcase-section .section-title p {
+  color: #B9D8D6 !important;
+}
+
 body.dark-mode .section.bg-light,
 body.dark-mode .bg-light {
   background: #10242B !important;
